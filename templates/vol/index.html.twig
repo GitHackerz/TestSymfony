@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello VolController!{% endblock %}
+
+{% block body %}
+    <h1>Hello VolController!</h1>
+    <table border="1">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Destination</th>
+            <th>Date depart</th>
+            <th>Date arrive</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for vol in vols %}
+            <tr>
+                <td>{{ vol.id }}</td>
+                <td>{{ vol.villeDestination }}</td>
+                <td>{{ vol.dateDeDepart ? vol.dateDeDepart|date('Y-m-d') : '' }}</td>
+                <td>{{ vol.dateArrive ? vol.dateArrive|date('Y-m-d') : '' }}</td>
+
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    Book: {{ book.title }}
+    <br>
+    Category: {{ book.category }}
+    <br>
+    {% if book.published %}
+    Book Published
+    {% else %}
+    Book Not Published
+    {% endif %}
+    <br>
+    <a href="{{ path('book_list') }}">Back to the list</a>
+{% endblock %}
